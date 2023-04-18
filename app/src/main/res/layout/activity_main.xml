@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/mainTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/minActionBarHeight"
+            android:background="@color/black"
+            android:layout_marginBottom="@dimen/fab_margin">
+
+            <TextView
+                android:id="@+id/textApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:fontFamily="sans-serif"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text17sp"
+                android:textStyle="bold"
+                tools:text="@string/app_name" />
+
+            <TextView
+                android:id="@+id/textCreator"
+                android:layout_toEndOf="@id/textApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:fontFamily="sans-serif"
+                android:text="@string/creator_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text11sp"
+                android:textStyle="italic"
+                tools:text="@string/creator_name" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAddPassword"
+                android:layout_width="80dp"
+                android:layout_toEndOf="@id/textCreator"
+                android:layout_centerVertical="true"
+                android:layout_height="38dp"
+                android:stateListAnimator="@null"
+                android:text="@string/create"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:onClick="onButtonAdd"
+                android:textSize="11sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_passwords"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/mainTitle"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:fontFamily="sans-serif"
+            android:text="@string/passwords"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text17sp"
+            android:textStyle="bold"
+            tools:text="@string/passwords" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/title_passwords"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/password_item"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>
+
